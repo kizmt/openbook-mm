@@ -80,7 +80,7 @@ public class OpenBookTest {
     public void hardCancelAndSettle() throws RpcException {
         // Load private key
         ClassPathResource resource = new ClassPathResource(
-                "/mikefsWLEcNYHgsiwSRr6PVd7yVcoKeaURQqeDE1tXN.json",
+                "/dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf.json",
                 SerumApplication.class
         );
 
@@ -128,7 +128,7 @@ public class OpenBookTest {
             newTx.addInstruction(
                     SerumProgram.cancelOrderByClientId(
                             mkt,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
                             account.getPublicKey(),
                             14201L
                     )
@@ -137,10 +137,10 @@ public class OpenBookTest {
             newTx.addInstruction(
                     SerumProgram.settleFunds(
                             mkt,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
                             account.getPublicKey(),
                             sessionWsolAccount.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("A6Jcj1XV6QqDpdimmL7jm1gQtSP62j8BWbyqkdhe4eLe")
+                            new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf")
                     )
             );
 
@@ -193,7 +193,7 @@ public class OpenBookTest {
             newTx2.addInstruction(
                     SerumProgram.cancelOrderByClientId(
                             mkt,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
                             account.getPublicKey(),
                             113371L
                     )
@@ -202,10 +202,10 @@ public class OpenBookTest {
             newTx2.addInstruction(
                     SerumProgram.settleFunds(
                             mkt,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
                             account.getPublicKey(),
                             sessionWsolAccount2.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("A6Jcj1XV6QqDpdimmL7jm1gQtSP62j8BWbyqkdhe4eLe")
+                            new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf")
                     )
             );
 
@@ -251,7 +251,7 @@ public class OpenBookTest {
     public void hardSettle() throws RpcException {
         // Load private key
         ClassPathResource resource = new ClassPathResource(
-                "/mikefsWLEcNYHgsiwSRr6PVd7yVcoKeaURQqeDE1tXN.json",
+                "/dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf.json",
                 SerumApplication.class
         );
 
@@ -300,10 +300,10 @@ public class OpenBookTest {
             newTx.addInstruction(
                     SerumProgram.settleFunds(
                             mkt,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
                             account.getPublicKey(),
                             sessionWsolAccount.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("A6Jcj1XV6QqDpdimmL7jm1gQtSP62j8BWbyqkdhe4eLe")
+                            new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf")
                     )
             );
 
@@ -327,7 +327,7 @@ public class OpenBookTest {
     public void dataTest() throws RpcException {
         // Calculate average lamports per TX from last 100 TX
         List<SignatureInformation> signatureInformations = rpcClient.getApi().getSignaturesForAddress(
-                PublicKey.valueOf("mikefsWLEcNYHgsiwSRr6PVd7yVcoKeaURQqeDE1tXN"),
+                PublicKey.valueOf("dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf"),
                 200,
                 Commitment.CONFIRMED
         );
@@ -343,7 +343,7 @@ public class OpenBookTest {
     @Test
     public void getSingleTxTest() throws RpcException {
         ConfirmedTransaction tx = rpcClient.getApi().getTransaction(
-                "26DsRzShP4nu8HBhuCVTZvS2dbm5fqvbNfPRRjxPGnvz2tE11hrLePiNj4kDffemsbgjHY5Ehthr3Je3VhJRKMri",
+                "4YuLSVEvEGvUJ1JPrcVtcyHNoBbcCAC5kBZjgwxfKPNq4jhG1CV2ucWPfeUKL7igoCr3PgFwJp4KQTSWSJ9vo5rV",
                 Commitment.CONFIRMED);
 
         log.info(tx.toString());

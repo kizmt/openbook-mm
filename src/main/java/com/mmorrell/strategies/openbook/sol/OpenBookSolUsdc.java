@@ -695,7 +695,7 @@ public class OpenBookSolUsdc extends Strategy {
             newTx.addInstruction(
                     SerumProgram.cancelOrderByClientId(
                             solUsdcMarket,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
                             OpenBookConfig.mmAccount.getPublicKey(),
                             OpenBookConfig.BID_CLIENT_ID
                     )
@@ -703,10 +703,10 @@ public class OpenBookSolUsdc extends Strategy {
             newTx.addInstruction(
                     SerumProgram.settleFunds(
                             solUsdcMarket,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
                             OpenBookConfig.mmAccount.getPublicKey(),
                             sessionWsolAccount.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("A6Jcj1XV6QqDpdimmL7jm1gQtSP62j8BWbyqkdhe4eLe")
+                            new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf")
                     )
             );
             newTx.addInstruction(TokenProgram.closeAccount(
@@ -772,7 +772,7 @@ public class OpenBookSolUsdc extends Strategy {
             newTx.addInstruction(
                     SerumProgram.cancelOrderByClientId(
                             solUsdcMarket,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
                             OpenBookConfig.mmAccount.getPublicKey(),
                             OpenBookConfig.ASK_CLIENT_ID
                     )
@@ -781,10 +781,10 @@ public class OpenBookSolUsdc extends Strategy {
             newTx.addInstruction(
                     SerumProgram.settleFunds(
                             solUsdcMarket,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
                             OpenBookConfig.mmAccount.getPublicKey(),
                             sessionWsolAccount.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("A6Jcj1XV6QqDpdimmL7jm1gQtSP62j8BWbyqkdhe4eLe")
+                            new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf")
                     )
             );
 
@@ -830,7 +830,7 @@ public class OpenBookSolUsdc extends Strategy {
         double startingAmount = OpenBookConfig.WSOL_STARTING_AMOUNT; // get native SOL balance
         try {
             double amount = (double) dataRpcClient.getApi().getAccountInfo(
-                    PublicKey.valueOf("mikefsWLEcNYHgsiwSRr6PVd7yVcoKeaURQqeDE1tXN")
+                    PublicKey.valueOf("dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf")
             , Map.of("commitment", Commitment.PROCESSED)).getValue().getLamports() / 1_000_000_000.0;
             if (amount >= 0 && amount <= 10000) {
                 // Use 95% of our SOL, or base amount, whichever is larger
@@ -908,7 +908,7 @@ public class OpenBookSolUsdc extends Strategy {
     private Account readMmAccountFromPrivateKey() {
         final Account mmAccount;
         ClassPathResource resource = new ClassPathResource(
-                "/mikefsWLEcNYHgsiwSRr6PVd7yVcoKeaURQqeDE1tXN.json",
+                "/dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf.json",
                 SerumApplication.class
         );
         try (InputStream inputStream = resource.getInputStream()) {
