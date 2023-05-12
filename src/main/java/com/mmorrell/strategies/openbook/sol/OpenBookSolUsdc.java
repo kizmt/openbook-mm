@@ -695,7 +695,7 @@ public class OpenBookSolUsdc extends Strategy {
             newTx.addInstruction(
                     SerumProgram.cancelOrderByClientId(
                             solUsdcMarket,
-                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
+                            new PublicKey("your-sol-usdc-open-orders-accoun"),
                             OpenBookConfig.mmAccount.getPublicKey(),
                             OpenBookConfig.BID_CLIENT_ID
                     )
@@ -703,10 +703,10 @@ public class OpenBookSolUsdc extends Strategy {
             newTx.addInstruction(
                     SerumProgram.settleFunds(
                             solUsdcMarket,
-                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
+                            new PublicKey("your-sol-usdc-open-orders-accoun"),
                             OpenBookConfig.mmAccount.getPublicKey(),
                             sessionWsolAccount.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf")
+                            new PublicKey("your-usdc-token-account")
                     )
             );
             newTx.addInstruction(TokenProgram.closeAccount(
@@ -772,7 +772,7 @@ public class OpenBookSolUsdc extends Strategy {
             newTx.addInstruction(
                     SerumProgram.cancelOrderByClientId(
                             solUsdcMarket,
-                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
+                            new PublicKey("your-sol-usdc-open-orders-accoun"),
                             OpenBookConfig.mmAccount.getPublicKey(),
                             OpenBookConfig.ASK_CLIENT_ID
                     )
@@ -781,10 +781,10 @@ public class OpenBookSolUsdc extends Strategy {
             newTx.addInstruction(
                     SerumProgram.settleFunds(
                             solUsdcMarket,
-                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
+                            new PublicKey("your-sol-usdc-open-orders-accoun"),
                             OpenBookConfig.mmAccount.getPublicKey(),
                             sessionWsolAccount.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf")
+                            new PublicKey("your-usdc-token-account")
                     )
             );
 
@@ -830,7 +830,7 @@ public class OpenBookSolUsdc extends Strategy {
         double startingAmount = OpenBookConfig.WSOL_STARTING_AMOUNT; // get native SOL balance
         try {
             double amount = (double) dataRpcClient.getApi().getAccountInfo(
-                    PublicKey.valueOf("dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf")
+                    PublicKey.valueOf("your-sol-wallet-pubkey")
             , Map.of("commitment", Commitment.PROCESSED)).getValue().getLamports() / 1_000_000_000.0;
             if (amount >= 0 && amount <= 10000) {
                 // Use 95% of our SOL, or base amount, whichever is larger
@@ -908,7 +908,7 @@ public class OpenBookSolUsdc extends Strategy {
     private Account readMmAccountFromPrivateKey() {
         final Account mmAccount;
         ClassPathResource resource = new ClassPathResource(
-                "/dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf.json",
+                "/your-solana-private-key.json",
                 SerumApplication.class
         );
         try (InputStream inputStream = resource.getInputStream()) {

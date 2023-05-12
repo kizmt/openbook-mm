@@ -14,9 +14,9 @@ public class OpenBookConfig {
 
     // Edit these for SOL/USDC
     public static final PublicKey SOL_USDC_OOA
-            = new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS");
+            = new PublicKey("your-sol-usdc-open-orders-account");
     public static final PublicKey USDC_QUOTE_WALLET
-            = new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf");
+            = new PublicKey("your-usdc-token-account");
 
     // SOL
     public static final PublicKey SOL_USDC_MARKET_ID
