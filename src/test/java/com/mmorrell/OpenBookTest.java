@@ -80,7 +80,7 @@ public class OpenBookTest {
     public void hardCancelAndSettle() throws RpcException {
         // Load private key
         ClassPathResource resource = new ClassPathResource(
-                "/dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf.json",
+                "/your-solana-private-key.json",
                 SerumApplication.class
         );
 
@@ -128,7 +128,7 @@ public class OpenBookTest {
             newTx.addInstruction(
                     SerumProgram.cancelOrderByClientId(
                             mkt,
-                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
+                            new PublicKey("your-sol-usdc-open-orders-account"),
                             account.getPublicKey(),
                             14201L
                     )
@@ -137,10 +137,10 @@ public class OpenBookTest {
             newTx.addInstruction(
                     SerumProgram.settleFunds(
                             mkt,
-                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
+                            new PublicKey("your-sol-usdc-open-orders-account"),
                             account.getPublicKey(),
                             sessionWsolAccount.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf")
+                            new PublicKey("your-usdc-token-account")
                     )
             );
 
@@ -193,7 +193,7 @@ public class OpenBookTest {
             newTx2.addInstruction(
                     SerumProgram.cancelOrderByClientId(
                             mkt,
-                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
+                            new PublicKey("your-sol-usdc-open-orders-account"),
                             account.getPublicKey(),
                             113371L
                     )
@@ -202,10 +202,10 @@ public class OpenBookTest {
             newTx2.addInstruction(
                     SerumProgram.settleFunds(
                             mkt,
-                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
+                            new PublicKey("your-sol-usdc-open-orders-account"),
                             account.getPublicKey(),
                             sessionWsolAccount2.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf")
+                            new PublicKey("your-usdc-token-account")
                     )
             );
 
@@ -251,7 +251,7 @@ public class OpenBookTest {
     public void hardSettle() throws RpcException {
         // Load private key
         ClassPathResource resource = new ClassPathResource(
-                "/dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf.json",
+                "/your-solana-private-key.json",
                 SerumApplication.class
         );
 
@@ -300,10 +300,10 @@ public class OpenBookTest {
             newTx.addInstruction(
                     SerumProgram.settleFunds(
                             mkt,
-                            new PublicKey("F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS"),
+                            new PublicKey("your-sol-usdc-open-orders-account"),
                             account.getPublicKey(),
                             sessionWsolAccount.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf")
+                            new PublicKey("your-usdc-token-account")
                     )
             );
 
@@ -327,7 +327,7 @@ public class OpenBookTest {
     public void dataTest() throws RpcException {
         // Calculate average lamports per TX from last 100 TX
         List<SignatureInformation> signatureInformations = rpcClient.getApi().getSignaturesForAddress(
-                PublicKey.valueOf("dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf"),
+                PublicKey.valueOf("your-solana-wallet-address"),
                 200,
                 Commitment.CONFIRMED
         );
