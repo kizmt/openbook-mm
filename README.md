@@ -10,20 +10,21 @@ Please ensure you have installed Java, Docker Desktop, Solana CLI, and your pref
 
 - [Java](https://www.java.com/download)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-- [IntelliJ](https://www.jetbrains.com/idea/download)
 - [Solana CLI](https://docs.solana.com/cli/install-solana-cli-tools)
-- Paid RPC Service - [QuickNode](https://www.quicknode.com/)
+- [IntelliJ](https://www.jetbrains.com/idea/download)
+- RPC Service - [QuickNode](https://www.quicknode.com/)
 
+You will require a paid RPC service to operate the client, you may wish to ignore this step until you have completed inital setup.
 
 We recommend that all users [generate a new solana keypair](https://solanacookbook.com/references/keypairs-and-wallets.html#how-to-generate-a-new-keypair) for this initial exercise.
 
 ## Configuration
 To configure the client for market making SOL/USDC, you will require the following keys:
 
-- Your Wallet Pubkey
-- Your [Wallet Private Key](https://solanacookbook.com/references/keypairs-and-wallets.html#how-to-generate-a-new-keypair) in a JSON file
-- The USDC Token Account for that wallet
-- The SOL/USDC Open Orders Account for that wallet
+- Your Wallet Pubkey (see above)
+- Your [Wallet Private Key](https://solanacookbook.com/references/keypairs-and-wallets.html#how-to-generate-a-new-keypair) in a JSON file ```~/.config/solana/id.json```
+- The USDC Token Account for that wallet ```USDC_QUOTE_WALLET ("your-usdc-token-account")```
+- The SOL/USDC Open Orders Account for that wallet ```SOL_USDC_OOA ("your-sol-usdc-open-orders-account")```
 
 Please follow the initial configuration steps for market making SOL/USDC
 
