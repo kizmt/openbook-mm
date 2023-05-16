@@ -1,9 +1,7 @@
 # OpenBook Market Maker
-An HFT market making client for the [OpenBook DEX](https://github.com/openbook-dex/program) on Solana.
+An [HFT](https://cointelegraph.com/news/how-does-high-frequency-trading-work-on-decentralized-exchanges) market making client for the [OpenBook DEX](https://github.com/openbook-dex/program) on Solana.
 
-This initial guide will focus on configuring the client to market make the [SOL/USDC](https://solscan.io/account/8BnEgHoWFysVcuFFX7QztDmzuH8r5ZFvyP3sYwn1XTh6) pair.
-
-After completeing the guide feel free to explore, customize, and improve upon the client however you see fit.
+This guide will focus on initial configuration and setting up the client to trade the [SOL/USDC](https://solscan.io/account/8BnEgHoWFysVcuFFX7QztDmzuH8r5ZFvyP3sYwn1XTh6) pair.
 
 ## Initial Requirements
 Please ensure you have installed Java, Docker Desktop, Solana CLI, and your preferred IDE.
@@ -14,19 +12,23 @@ Please ensure you have installed Java, Docker Desktop, Solana CLI, and your pref
 - [IntelliJ](https://www.jetbrains.com/idea/download)
 - RPC Service - [QuickNode](https://www.quicknode.com/)
 
-You will require a paid RPC service to operate the client, you may wish to ignore this step until you have completed inital setup.
+You will require a paid RPC service to operate the client, you may wish to ignore this until you have completed all other steps.
 
-We recommend that all users [generate a new solana keypair](https://solanacookbook.com/references/keypairs-and-wallets.html#how-to-generate-a-new-keypair) for this initial exercise.
+We recommend that all users [generate a new solana keypair](https://solanacookbook.com/references/keypairs-and-wallets.html#how-to-generate-a-new-keypair) for this exercise.
+
+## Solana Account Requirements
+To configure the client for market making SOL/USDC, you will require the following account keys:
+
+- Your Solana Wallet [Pubkey](https://solanacookbook.com/references/keypairs-and-wallets.html#how-to-generate-a-new-keypair)
+    - This is your public Solana wallet address [(see example)](https://solscan.io/account/dooMxPqm1c2tfHmU74afb29RmFq537Jrdmro8eKXHNf)
+- Your wallet [Private Key](https://solanacookbook.com/references/keypairs-and-wallets.html#how-to-generate-a-new-keypair) in a JSON file
+    - Default file location: ```~/.config/solana/id.json```
+- The USDC Token Account for that wallet 
+    - ```USDC_QUOTE_WALLET ("your-usdc-token-account")``` [(see example)](https://solscan.io/account/2LHzRXq2uXXbyTFhgPSSRQxbj3FZChGNzsSr1eFH7Ljf)
+- The SOL/USDC Open Orders Account for that wallet 
+    - ```SOL_USDC_OOA ("your-sol-usdc-open-orders-account")``` [(see example)](https://solscan.io/account/F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS)
 
 ## Configuration
-To configure the client for market making SOL/USDC, you will require the following keys:
-
-- Your Wallet Pubkey (see above)
-- Your [Wallet Private Key](https://solanacookbook.com/references/keypairs-and-wallets.html#how-to-generate-a-new-keypair) in a JSON file ```~/.config/solana/id.json```
-- The USDC Token Account for that wallet ```USDC_QUOTE_WALLET ("your-usdc-token-account")```
-- The SOL/USDC Open Orders Account for that wallet ```SOL_USDC_OOA ("your-sol-usdc-open-orders-account")```
-
-Please follow the initial configuration steps for market making SOL/USDC
 
 ### OpenBookConfig.java
 
@@ -37,6 +39,8 @@ Please follow the initial configuration steps for market making SOL/USDC
 ### Resources
 - Configure openbook.properties with your RPC URL link
 - Add your Solana Private key .json file to the resources folder
+
+## Testing
 
 ## Deployment
 Use Docker for easy deployment
