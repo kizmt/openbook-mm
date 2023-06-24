@@ -844,7 +844,7 @@ public class OpenBookSolUsdc extends Strategy {
         double startingAmount = OpenBookConfig.WSOL_STARTING_AMOUNT; // get native SOL balance
         try {
             double amount = (double) dataRpcClient.getApi().getAccountInfo(
-                    PublicKey.valueOf("mikefsWLEcNYHgsiwSRr6PVd7yVcoKeaURQqeDE1tXN")
+                    PublicKey.valueOf("your-solana-pubkey")
             , Map.of("commitment", Commitment.PROCESSED)).getValue().getLamports() / 1_000_000_000.0;
             if (amount >= 0 && amount <= 10000) {
                 // Use 95% of our SOL, or base amount, whichever is larger
@@ -922,7 +922,7 @@ public class OpenBookSolUsdc extends Strategy {
     private Account readMmAccountFromPrivateKey() {
         final Account mmAccount;
         ClassPathResource resource = new ClassPathResource(
-                "/mikefsWLEcNYHgsiwSRr6PVd7yVcoKeaURQqeDE1tXN.json",
+                "/your-solana-pubkey.json",
                 SerumApplication.class
         );
         try (InputStream inputStream = resource.getInputStream()) {

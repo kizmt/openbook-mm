@@ -14,7 +14,7 @@ public class OpenBookConfig {
 
     // User-set
     public static final PublicKey USDC_QUOTE_WALLET
-            = new PublicKey("A6Jcj1XV6QqDpdimmL7jm1gQtSP62j8BWbyqkdhe4eLe");
+            = new PublicKey("your-usdc-quote-wallet");
 
     // SOL
     public static final PublicKey SOL_USDC_MARKET_ID
@@ -94,7 +94,7 @@ public class OpenBookConfig {
             SPACE_MONKEY,
             JUMP_TRADING,
             PublicKey.valueOf("CYmcDS6vgNKYaVkEq7Y7T9C8Nbc417ypKiqbxW8jpU9e"), //A6T drift/zeta/ob MEV\
-            PublicKey.valueOf("4gGTcGVSbbE4djDwgx8akJrMHjLY7VXuRTnug9UWPXEa")  //DSA MEV BOT
+            PublicKey.valueOf("4gGTcGVSbbE4djDwgx8akJrMHjLY7VXuRTnug9UWPXEa"),  //DSA MEV BOT
     );
     public static final List<PublicKey> KNOWN_FISH = List.of(
             // PublicKey.valueOf("6LqKv8iTZXi369pv7B9ZxAF56TC6oU9uFxWYsVdfLzMJ"), //SoL

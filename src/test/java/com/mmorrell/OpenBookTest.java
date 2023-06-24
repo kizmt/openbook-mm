@@ -80,7 +80,7 @@ public class OpenBookTest {
     public void hardCancelAndSettle() throws RpcException {
         // Load private key
         ClassPathResource resource = new ClassPathResource(
-                "/mikefsWLEcNYHgsiwSRr6PVd7yVcoKeaURQqeDE1tXN.json",
+                "/your-solana-pubkey.json",
                 SerumApplication.class
         );
 
@@ -128,7 +128,7 @@ public class OpenBookTest {
             newTx.addInstruction(
                     SerumProgram.cancelOrderByClientId(
                             mkt,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("your-solusdc-ooa"),
                             account.getPublicKey(),
                             14201L
                     )
@@ -137,10 +137,10 @@ public class OpenBookTest {
             newTx.addInstruction(
                     SerumProgram.settleFunds(
                             mkt,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("your-solusdc-ooa"),
                             account.getPublicKey(),
                             sessionWsolAccount.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("A6Jcj1XV6QqDpdimmL7jm1gQtSP62j8BWbyqkdhe4eLe")
+                            new PublicKey("your-usdc-quote-wallet")
                     )
             );
 
@@ -193,7 +193,7 @@ public class OpenBookTest {
             newTx2.addInstruction(
                     SerumProgram.cancelOrderByClientId(
                             mkt,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("your-solusdc-ooa"),
                             account.getPublicKey(),
                             113371L
                     )
@@ -202,10 +202,10 @@ public class OpenBookTest {
             newTx2.addInstruction(
                     SerumProgram.settleFunds(
                             mkt,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("your-solusdc-ooa"),
                             account.getPublicKey(),
                             sessionWsolAccount2.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("A6Jcj1XV6QqDpdimmL7jm1gQtSP62j8BWbyqkdhe4eLe")
+                            new PublicKey("your-usdc-quote-wallet")
                     )
             );
 
@@ -251,7 +251,7 @@ public class OpenBookTest {
     public void hardSettle() throws RpcException {
         // Load private key
         ClassPathResource resource = new ClassPathResource(
-                "/mikefsWLEcNYHgsiwSRr6PVd7yVcoKeaURQqeDE1tXN.json",
+                "/your-solana-pubkey.json",
                 SerumApplication.class
         );
 
@@ -300,10 +300,10 @@ public class OpenBookTest {
             newTx.addInstruction(
                     SerumProgram.settleFunds(
                             mkt,
-                            new PublicKey("1rAS3fWujnbcLZ7hNuMJbu2nFEubHyevKzYUfbPVLPY"),
+                            new PublicKey("your-solusdc-ooa"),
                             account.getPublicKey(),
                             sessionWsolAccount.getPublicKey(), //random wsol acct for settles
-                            new PublicKey("A6Jcj1XV6QqDpdimmL7jm1gQtSP62j8BWbyqkdhe4eLe")
+                            new PublicKey("your-usdc-quote-wallet")
                     )
             );
 
@@ -327,7 +327,7 @@ public class OpenBookTest {
     public void dataTest() throws RpcException {
         // Calculate average lamports per TX from last 100 TX
         List<SignatureInformation> signatureInformations = rpcClient.getApi().getSignaturesForAddress(
-                PublicKey.valueOf("mikefsWLEcNYHgsiwSRr6PVd7yVcoKeaURQqeDE1tXN"),
+                PublicKey.valueOf("your-solana-pubkey"),
                 200,
                 Commitment.CONFIRMED
         );
