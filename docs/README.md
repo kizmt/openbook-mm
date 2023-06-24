@@ -1,5 +1,5 @@
 # OpenBook Market Maker
-![openbook-mm 1.png](..%2F..%2F..%2Fopenbook-mm%201.png)
+![img2.png](img2.png)
 
 An [HFT](https://cointelegraph.com/news/how-does-high-frequency-trading-work-on-decentralized-exchanges) market making client for the [OpenBook DEX](https://github.com/openbook-dex/program) on Solana.
 - Installation Guide: [SETUP.md](SETUP.md)
