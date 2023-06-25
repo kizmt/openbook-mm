@@ -1,7 +1,6 @@
 ![img3.png](img3.png)
 ## Initial Requirements
 
----
 Please ensure you have installed Java, Docker Desktop, Solana CLI, and your preferred IDE.
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (for Windows)
 - [Solana CLI](https://docs.solana.com/cli/install-solana-cli-tools)
@@ -10,9 +9,9 @@ Please ensure you have installed Java, Docker Desktop, Solana CLI, and your pref
 
 You will require a paid RPC service to operate the client, you may wish to ignore this until you have completed all other steps.
 
+---
 ## Solana Account Requirements
 
----
 We recommend that all users [generate a new solana keypair](https://solanacookbook.com/references/keypairs-and-wallets.html#how-to-generate-a-new-keypair) for this initial exercise.
 To configure the client for market making SOL/USDC, you will require the following account keys:
 
@@ -27,9 +26,9 @@ To configure the client for market making SOL/USDC, you will require the followi
 - The SOL/USDC Open Orders Account _for that Pubkey_
     - Usage in Repository ```("your-solusdc-ooa")``` [(see example)](https://solscan.io/account/F8ijbW2wxjPY7Aa7QknLybwKHYk5QVkN1q5BU8aGNqhS)
 
+---
 ## Configuration
 
----
 Fork the repostiory and open your own local project through your preferred IDE.
 From here we will look to insert the above Solana account keys into the following files;
 - ```OpenBookTest.java```
@@ -37,20 +36,20 @@ From here we will look to insert the above Solana account keys into the followin
 - ```OpenBookSolUsdc.java```
 - ```openbook.properties```
 
+---
 ## Resources
 
----
 - Configure openbook.properties with your RPC URL link
 - Add your Solana Private key .json file to the resources **folder**, rename the id.json file to display your wallet Pubkey followed by .json.
 
+---
 ## Testing
 
----
 When ready, run ```OpenBookTest.java``` to confirm that all checks have successfully passed. 
 
+---
 ## Deployment
 
----
 Use Docker for easy deployment
 1. Build the Container from the repository Dockerfile
 2. Configure the container name, instance name, and port bindings
@@ -59,9 +58,9 @@ Use Docker for easy deployment
 4. Confirm success by checking your open orders over at the [OpenBook Explorer](https://openserum.io)
 5. Begin configuring your own SolUsdc trading strategies and profit
 
+---
 ## Setup Complete
 
----
 ### Links:
 - Client Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)
 - Customizing your SolUsdc Strategy [OpenBookSolUsdc.java]((../src/main/java/com/mmorrell/strategies/openbook/sol/OpenBookSolUsdc.java#L146))

@@ -1,18 +1,18 @@
 ![img4.png](img4.png)
-### Current Outline
+## Current Outline
 
 - `OpenBookSolUsdc` extends `Strategy`
     - implements `start()`
 - `Strategy` contains 1 void method `start()`
 
-Future:
+### Future:
 - `OpenBookSolUsdc` extends `OpenBookStrategy`
     - Provides `marketId`
     - implements `start()`
 - `OpenBookStrategy` extends `Strategy`
 
 
-TBD
+_TBD_
 
 ---
 ### Links

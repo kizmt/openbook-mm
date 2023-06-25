@@ -5,14 +5,14 @@ An [HFT](https://cointelegraph.com/news/how-does-high-frequency-trading-work-on-
 
 Create custom trading strategies for SOL and SPL token markets.
 
+---
 ## Getting Started
 
----
-#### 1. Installation Guide: [SETUP.md](SETUP.md)
-#### 2. Client Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)
-#### 3. SOL/USDC Strategy: [OpenBookSolUsdc.java](../src/main/java/com/mmorrell/strategies/openbook/sol/OpenBookSolUsdc.java#L146)
+ 1. Installation Guide: [SETUP.md](SETUP.md)
+ 2. Client Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)
+ 3. SOL/USDC Strategy: [OpenBookSolUsdc.java](../src/main/java/com/mmorrell/strategies/openbook/sol/OpenBookSolUsdc.java#L146)
 
-- ### Adding New Strategy
+### Adding New Strategy
 
 - Create class MyNewStrategy `extends Strategy`.
 - Create bean of MyNewStrategy using `@Component` annotation, or in a config.
@@ -20,10 +20,9 @@ Create custom trading strategies for SOL and SPL token markets.
 - Wire `MyNewStrategy` bean into `StrategyManager` constructor.
 - Add `myNewStrategy.start()` call inside of `StrategyManager.strategyStartup()`.
 
-
+---
 ## Contributing
 
----
 Anyone is welcome to create an issue to build, discuss or request a new feature or update to the existing code base.
 
 The general flow for making a contribution:
@@ -37,12 +36,12 @@ The general flow for making a contribution:
 **NOTE**: Be sure to merge the latest from "upstream" before making a
 pull request!
 
+---
 ## Additional Notes
 
----
 - The current state is a proof-of-concept, but the project is being modularized in this repo.
 
+---
 ## License
 
----
 - MIT 
